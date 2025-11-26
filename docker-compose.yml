@@ -6,6 +6,10 @@ services:
     container_name: books_bot
     environment:
       - BOT_TOKEN=${BOT_TOKEN}
+
+    env_file:
+      - .env
+
     volumes:
       - ./data:/app/data  # Ma'lumotlarni saqlash uchun jild
     restart: unless-stopped  # Konteyner o'chganda avto-qayta ishga tushadi
